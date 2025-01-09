@@ -86,7 +86,7 @@ export const dataTableProps = {
   remote: Boolean,
   defaultExpandedRowKeys: {
     type: Array as PropType<RowKey[]>,
-    default: []
+    default: () => []
   },
   defaultExpandAll: Boolean,
   expandedRowKeys: Array as PropType<RowKey[]>,

@@ -50,7 +50,7 @@ export const mentionProps = {
   >,
   options: {
     type: Array as PropType<MentionOption[]>,
-    default: []
+    default: () => []
   },
   filter: {
     type: Function as PropType<
