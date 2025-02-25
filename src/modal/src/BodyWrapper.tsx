@@ -1,4 +1,8 @@
-import type { ModalDraggableOptions } from './interface'
+import type {
+  ModalDisplayDirective,
+  ModalDraggableOptions,
+  ModalPreset
+} from './interface'
 import type { ModalSlots } from './Modal'
 import { clickoutside } from 'vdirs'
 import {
@@ -51,9 +55,9 @@ export default defineComponent({
       type: Boolean,
       required: true
     },
-    preset: String as PropType<'confirm' | 'dialog' | 'card'>,
+    preset: String as PropType<ModalPreset>,
     displayDirective: {
-      type: String as PropType<'if' | 'show'>,
+      type: String as PropType<ModalDisplayDirective>,
       required: true
     },
     trapFocus: {

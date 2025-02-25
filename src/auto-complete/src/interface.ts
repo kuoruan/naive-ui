@@ -29,3 +29,5 @@ export interface AutoCompleteDefaultSlotProps {
   handleBlur: (e: FocusEvent) => void
   value: string | null
 }
+
+export type AutoCompleteSize = 'small' | 'medium' | 'large'

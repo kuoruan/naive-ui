@@ -1,7 +1,9 @@
 import type { ThemeProps } from '../../_mixins'
 import type { ExtractPublicPropTypes, MaybeArray } from '../../_utils'
 import type {
+  CollapseArrowPlacement,
   CollapseArrowSlotProps,
+  CollapseDisplayDirective,
   CollapseItemHeaderExtraSlotProps,
   CollapseItemHeaderSlotProps,
   HeaderClickInfo,
@@ -42,7 +44,7 @@ export const collapseProps = {
     string | number | Array<string | number> | null
   >,
   arrowPlacement: {
-    type: String as PropType<'left' | 'right'>,
+    type: String as PropType<CollapseArrowPlacement>,
     default: 'left'
   },
   accordion: {
@@ -50,7 +52,7 @@ export const collapseProps = {
     default: false
   },
   displayDirective: {
-    type: String as PropType<'if' | 'show'>,
+    type: String as PropType<CollapseDisplayDirective>,
     default: 'if'
   },
   triggerAreas: {

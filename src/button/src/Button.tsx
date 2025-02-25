@@ -2,7 +2,7 @@ import type { BaseWaveRef } from '../../_internal'
 import type { ThemeProps } from '../../_mixins'
 import type { ExtractPublicPropTypes, MaybeArray } from '../../_utils'
 import type { ButtonTheme } from '../styles'
-import type { Size, Type } from './interface'
+import type { AttrType, IconPlacement, Size, Type } from './interface'
 import { changeColor } from 'seemly'
 import { useMemo } from 'vooks'
 import {
@@ -77,11 +77,11 @@ export const buttonProps = {
   dashed: Boolean,
   renderIcon: Function as PropType<() => VNodeChild>,
   iconPlacement: {
-    type: String as PropType<'left' | 'right'>,
+    type: String as PropType<IconPlacement>,
     default: 'left'
   },
   attrType: {
-    type: String as PropType<'button' | 'submit' | 'reset'>,
+    type: String as PropType<AttrType>,
     default: 'button'
   },
   bordered: {

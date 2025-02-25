@@ -1,3 +1,4 @@
+import type { AnchorType } from './interface'
 import type { OffsetTarget } from './utils'
 import { throttle } from 'lodash-es'
 import { unwrapElement } from 'seemly'
@@ -26,7 +27,7 @@ export interface BaseAnchorInst {
 
 export const baseAnchorProps = {
   type: {
-    type: String as PropType<'block' | 'rail'>,
+    type: String as PropType<AnchorType>,
     default: 'rail'
   },
   showRail: {

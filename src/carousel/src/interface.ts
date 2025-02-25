@@ -39,3 +39,15 @@ export interface CarouselDotSlotProps {
   currentIndex: number
   to: (index: number) => void
 }
+
+export type CarouselDotType = 'dot' | 'line' | 'never'
+
+export type CarouselSlidesPerView = number | 'auto'
+
+export type CarouselDirection = 'horizontal' | 'vertical'
+
+export type CarouselDotPlacement = 'top' | 'bottom' | 'left' | 'right'
+
+export type CarouselEffect = 'slide' | 'fade' | 'card' | 'custom'
+
+export type CarouselTrigger = 'click' | 'hover'

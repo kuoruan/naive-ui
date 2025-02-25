@@ -7,8 +7,10 @@ import type { SelectBaseOption } from '../../select/src/interface'
 import type { CascaderTheme } from '../styles'
 import type {
   CascaderInst,
+  CascaderMaxTagCount,
   CascaderMenuInstance,
   CascaderOption,
+  CascaderSize,
   ExpandTrigger,
   Filter,
   Key,
@@ -90,7 +92,7 @@ export const cascaderProps = {
   },
   placeholder: String,
   multiple: Boolean,
-  size: String as PropType<'small' | 'medium' | 'large'>,
+  size: String as PropType<CascaderSize>,
   filterable: Boolean,
   disabled: {
     type: Boolean as PropType<boolean | undefined>,
@@ -133,7 +135,7 @@ export const cascaderProps = {
     type: Boolean as PropType<boolean | undefined>,
     default: undefined
   },
-  maxTagCount: [String, Number] as PropType<number | 'responsive'>,
+  maxTagCount: [String, Number] as PropType<CascaderMaxTagCount>,
   ellipsisTagPopoverProps: Object as PropType<PopoverProps>,
   menuProps: Object as PropType<HTMLAttributes>,
   filterMenuProps: Object as PropType<HTMLAttributes>,

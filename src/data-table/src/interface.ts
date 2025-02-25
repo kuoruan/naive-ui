@@ -23,6 +23,14 @@ import type { ColItem, RowItem } from './use-group-header'
 import { useTheme } from '../../_mixins'
 import { createInjectionKey } from '../../_utils'
 
+export type DataTableSize = 'small' | 'medium' | 'large'
+
+export type DataTableSummaryPlacement = 'top' | 'bottom'
+
+export type DataTablePaginationBehaviorOnFilter = 'first' | 'current'
+
+export type DataTableTableLayout = 'auto' | 'fixed'
+
 export const dataTableProps = {
   ...(useTheme.props as ThemeProps<DataTableTheme>),
   onUnstableColumnResize: Function as PropType<
@@ -80,7 +88,7 @@ export const dataTableProps = {
   },
   singleColumn: Boolean,
   size: {
-    type: String as PropType<'small' | 'medium' | 'large'>,
+    type: String as PropType<DataTableSize>,
     default: 'medium'
   },
   remote: Boolean,
@@ -98,7 +106,7 @@ export const dataTableProps = {
   heightForRow: Function as PropType<DataTableHeightForRow>,
   minRowHeight: { type: Number, default: 28 },
   tableLayout: {
-    type: String as PropType<'auto' | 'fixed'>,
+    type: String as PropType<DataTableTableLayout>,
     default: 'auto'
   },
   allowCheckingNotLoaded: Boolean,
@@ -116,11 +124,11 @@ export const dataTableProps = {
   },
   flexHeight: Boolean,
   summaryPlacement: {
-    type: String as PropType<'top' | 'bottom'>,
+    type: String as PropType<DataTableSummaryPlacement>,
     default: 'bottom'
   },
   paginationBehaviorOnFilter: {
-    type: String as PropType<'first' | 'current'>,
+    type: String as PropType<DataTablePaginationBehaviorOnFilter>,
     default: 'current'
   },
   filterIconPopoverProps: Object as PropType<PopoverProps>,

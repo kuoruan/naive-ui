@@ -146,3 +146,7 @@ export interface CascaderInst {
     options: Array<CascaderOption | null>
   }
 }
+
+export type CascaderSize = 'small' | 'medium' | 'large'
+
+export type CascaderMaxTagCount = number | 'responsive'

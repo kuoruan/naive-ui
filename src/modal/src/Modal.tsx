@@ -3,7 +3,12 @@ import type { ExtractPublicPropTypes, MaybeArray } from '../../_utils'
 import type { CardSlots } from '../../card'
 import type { DialogSlots } from '../../dialog'
 import type { ModalTheme } from '../styles'
-import type { ModalDraggableOptions } from './interface'
+import type {
+  ModalDisplayDirective,
+  ModalDraggableOptions,
+  ModalPreset,
+  ModalTransformOrigin
+} from './interface'
 import { getPreciseEventTarget } from 'seemly'
 import { zindexable } from 'vdirs'
 import { useClicked, useClickPosition, useIsMounted } from 'vooks'
@@ -49,14 +54,14 @@ export const modalProps = {
     type: Boolean,
     default: true
   },
-  preset: String as PropType<'confirm' | 'dialog' | 'card'>,
+  preset: String as PropType<ModalPreset>,
   to: [String, Object] as PropType<string | HTMLElement>,
   displayDirective: {
-    type: String as PropType<'if' | 'show'>,
+    type: String as PropType<ModalDisplayDirective>,
     default: 'if'
   },
   transformOrigin: {
-    type: String as PropType<'center' | 'mouse'>,
+    type: String as PropType<ModalTransformOrigin>,
     default: 'mouse'
   },
   zIndex: Number,

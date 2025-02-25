@@ -18,6 +18,12 @@ export interface ModalProviderInjection {
 export const modalProviderInjectionKey
   = createInjectionKey<ModalProviderInjection>('n-modal-provider')
 
+export type ModalPreset = 'confirm' | 'dialog' | 'card'
+
+export type ModalDisplayDirective = 'if' | 'show'
+
+export type ModalTransformOrigin = 'center' | 'mouse'
+
 export interface ModalInjection {
   getMousePosition: () => {
     x: number
@@ -27,7 +33,7 @@ export interface ModalInjection {
   mergedThemeRef: Ref<MergedTheme<ModalTheme>>
   isMountedRef: Ref<boolean>
   appearRef: Ref<boolean | undefined>
-  transformOriginRef: Ref<'mouse' | 'center'>
+  transformOriginRef: Ref<ModalTransformOrigin>
 }
 
 export const modalInjectionKey = createInjectionKey<ModalInjection>('n-modal')

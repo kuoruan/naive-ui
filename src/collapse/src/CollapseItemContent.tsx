@@ -1,3 +1,4 @@
+import type { CollapseDisplayDirective } from './interface'
 import { useFalseUntilTruthy } from 'vooks'
 import {
   defineComponent,
@@ -13,7 +14,7 @@ export default defineComponent({
   name: 'CollapseItemContent',
   props: {
     displayDirective: {
-      type: String as PropType<'if' | 'show'>,
+      type: String as PropType<CollapseDisplayDirective>,
       required: true
     },
     show: Boolean,

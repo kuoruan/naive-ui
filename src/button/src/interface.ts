@@ -8,3 +8,7 @@ export type Type =
   | 'success'
   | 'warning'
   | 'error'
+
+export type IconPlacement = 'left' | 'right'
+
+export type AttrType = 'button' | 'submit' | 'reset'

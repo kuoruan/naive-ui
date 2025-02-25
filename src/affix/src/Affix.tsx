@@ -1,4 +1,5 @@
 import type { ExtractPublicPropTypes } from '../../_utils'
+import type { AffixPosition } from './interface'
 import type { ScrollTarget } from './utils'
 import { beforeNextFrameOnce, unwrapElement } from 'seemly'
 import {
@@ -25,7 +26,7 @@ export const affixProps = {
   triggerTop: Number,
   triggerBottom: Number,
   position: {
-    type: String as PropType<'fixed' | 'absolute'>,
+    type: String as PropType<AffixPosition>,
     default: 'fixed'
   },
   // deprecated

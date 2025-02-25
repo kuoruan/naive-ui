@@ -5,3 +5,5 @@ export type RenderTag = (props: {
   option: SelectOption
   handleClose: () => void
 }) => VNodeChild
+
+export type SelectionSize = 'tiny' | 'small' | 'medium' | 'large'

@@ -1,6 +1,7 @@
 import type { ThemeProps } from '../../_mixins'
 import type { ExtractPublicPropTypes, MaybeArray } from '../../_utils'
 import type { CardTheme } from '../styles'
+import type { CardSize } from './interface'
 import { getPadding } from 'seemly'
 import {
   computed,
@@ -42,7 +43,7 @@ export const cardBaseProps = {
     default: false
   },
   size: {
-    type: String as PropType<'small' | 'medium' | 'large' | 'huge'>,
+    type: String as PropType<CardSize>,
     default: 'medium'
   },
   bordered: {

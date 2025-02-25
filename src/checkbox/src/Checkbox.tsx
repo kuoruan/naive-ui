@@ -2,6 +2,7 @@ import type { ThemeProps } from '../../_mixins'
 import type { CheckboxTheme } from '../styles'
 import type {
   CheckboxInst,
+  CheckboxSize,
   OnUpdateChecked,
   OnUpdateCheckedImpl
 } from './interface'
@@ -38,7 +39,7 @@ import style from './styles/index.cssr'
 
 export const checkboxProps = {
   ...(useTheme.props as ThemeProps<CheckboxTheme>),
-  size: String as PropType<'small' | 'medium' | 'large'>,
+  size: String as PropType<CheckboxSize>,
   checked: {
     type: [Boolean, String, Number] as PropType<
       boolean | string | number | undefined

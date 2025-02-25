@@ -7,7 +7,7 @@ import type {
   RenderLabelImpl
 } from '../../select-menu/src/interface'
 import type { InternalSelectionTheme } from '../styles'
-import type { RenderTag } from './interface'
+import type { RenderTag, SelectionSize } from './interface'
 import { getPadding } from 'seemly'
 import {
   computed,
@@ -85,7 +85,7 @@ export default defineComponent({
     clearable: Boolean,
     disabled: Boolean,
     size: {
-      type: String as PropType<'tiny' | 'small' | 'medium' | 'large'>,
+      type: String as PropType<SelectionSize>,
       default: 'medium'
     },
     loading: Boolean,

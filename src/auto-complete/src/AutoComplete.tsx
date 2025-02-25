@@ -16,6 +16,7 @@ import type {
   AutoCompleteInst,
   AutoCompleteOption,
   AutoCompleteOptions,
+  AutoCompleteSize,
   OnSelect,
   OnSelectImpl,
   OnUpdateImpl,
@@ -99,7 +100,7 @@ export const autoCompleteProps = {
   inputProps: Object as PropType<InputHTMLAttributes>,
   renderOption: Function as PropType<RenderOption>,
   renderLabel: Function as PropType<RenderLabel>,
-  size: String as PropType<'small' | 'medium' | 'large'>,
+  size: String as PropType<AutoCompleteSize>,
   options: {
     type: Array as PropType<AutoCompleteOptions>,
     default: () => []

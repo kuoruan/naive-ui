@@ -1,5 +1,6 @@
 import type { PropType } from 'vue'
 import type { ExtractPublicPropTypes } from '../../_utils'
+import type { CarouselDotType, CarouselTrigger } from './interface'
 import { indexMap } from 'seemly'
 import { defineComponent, h, onBeforeUpdate, ref } from 'vue'
 import { useConfig } from '../../_mixins'
@@ -15,11 +16,11 @@ const carouselDotsProps = {
     default: 0
   },
   dotType: {
-    type: String as PropType<'dot' | 'line' | 'never'>,
+    type: String as PropType<CarouselDotType>,
     default: 'dot'
   },
   trigger: {
-    type: String as PropType<'click' | 'hover'>,
+    type: String as PropType<CarouselTrigger>,
     default: 'click'
   },
   keyboard: Boolean

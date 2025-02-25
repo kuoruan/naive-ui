@@ -8,6 +8,7 @@ import type { PopoverTheme } from '../styles'
 import type {
   InternalPopoverInst,
   InternalRenderBody,
+  PopoverDisplayDirective,
   PopoverTrigger
 } from './interface'
 import { zindexable } from 'vdirs'
@@ -145,7 +146,7 @@ export const popoverBaseProps = {
   disabled: Boolean,
   getDisabled: Function as PropType<() => boolean>,
   displayDirective: {
-    type: String as PropType<'if' | 'show'>,
+    type: String as PropType<PopoverDisplayDirective>,
     default: 'if'
   },
   arrowClass: String,

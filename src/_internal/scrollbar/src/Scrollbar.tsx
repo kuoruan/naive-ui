@@ -5,6 +5,11 @@ import type {
   ExtractPublicPropTypes
 } from '../../../_utils'
 import type { ScrollbarTheme } from '../styles'
+import type {
+  ScrollbarTrigger,
+  ScrollbarXPlacement,
+  ScrollbarYPlacement
+} from './interface'
 import { off, on } from 'evtd'
 import { depx, getPadding, getPreciseEventTarget } from 'seemly'
 import { useIsIos } from 'vooks'
@@ -85,7 +90,7 @@ const scrollbarProps = {
   },
   xScrollable: Boolean,
   trigger: {
-    type: String as PropType<'none' | 'hover'>,
+    type: String as PropType<ScrollbarTrigger>,
     default: 'hover'
   },
   useUnifiedContainer: Boolean,
@@ -107,11 +112,11 @@ const scrollbarProps = {
   >,
   internalHoistYRail: Boolean,
   yPlacement: {
-    type: String as PropType<'left' | 'right'>,
+    type: String as PropType<ScrollbarYPlacement>,
     default: 'right'
   },
   xPlacement: {
-    type: String as PropType<'top' | 'bottom'>,
+    type: String as PropType<ScrollbarXPlacement>,
     default: 'bottom'
   }
 } as const

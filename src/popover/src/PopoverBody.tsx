@@ -1,6 +1,10 @@
 import type { ThemeProps } from '../../_mixins'
 import type { PopoverTheme } from '../styles'
-import type { PopoverTrigger } from './interface'
+import type {
+  PopoverDisplayDirective,
+  PopoverTrigger,
+  PopoverWidth
+} from './interface'
 import type { PopoverInjection } from './Popover'
 import { getPreciseEventTarget } from 'seemly'
 import { clickoutside, mousemoveoutside } from 'vdirs'
@@ -61,13 +65,13 @@ export const popoverBodyProps = {
   arrowStyle: [String, Object] as PropType<string | CSSProperties>,
   arrowWrapperClass: String,
   arrowWrapperStyle: [String, Object] as PropType<string | CSSProperties>,
-  displayDirective: String as PropType<'if' | 'show'>,
+  displayDirective: String as PropType<PopoverDisplayDirective>,
   x: Number,
   y: Number,
   flip: Boolean,
   overlap: Boolean,
   placement: String as PropType<FollowerPlacement>,
-  width: [Number, String] as PropType<number | 'trigger'>,
+  width: [Number, String] as PropType<PopoverWidth>,
   keepAliveOnHover: Boolean,
   scrollable: Boolean,
   contentClass: String,

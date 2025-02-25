@@ -52,3 +52,7 @@ export interface CollapseItemHeaderExtraSlotProps {
 export interface CollapseItemArrowSlotProps {
   collapsed: boolean
 }
+
+export type CollapseArrowPlacement = 'left' | 'right'
+
+export type CollapseDisplayDirective = 'if' | 'show'

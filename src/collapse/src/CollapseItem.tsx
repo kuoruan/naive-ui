@@ -1,5 +1,7 @@
 import type { ExtractPublicPropTypes } from '../../_utils'
 import type {
+  CollapseArrowPlacement,
+  CollapseDisplayDirective,
   CollapseItemArrowSlotProps,
   CollapseItemHeaderExtraSlotProps,
   CollapseItemHeaderSlotProps
@@ -34,7 +36,7 @@ export const collapseItemProps = {
   title: String,
   name: [String, Number] as PropType<string | number>,
   disabled: Boolean,
-  displayDirective: String as PropType<'if' | 'show'>
+  displayDirective: String as PropType<CollapseDisplayDirective>
 } as const
 
 export type CollapseItemProps = ExtractPublicPropTypes<typeof collapseItemProps>
@@ -91,7 +93,7 @@ export default defineComponent({
       mergedClsPrefix: mergedClsPrefixRef,
       collapsed: collapsedRef,
       triggerAreas: toRef(collapseProps, 'triggerAreas'),
-      mergedDisplayDirective: computed<'if' | 'show'>(() => {
+      mergedDisplayDirective: computed<CollapseDisplayDirective>(() => {
         const { displayDirective } = props
         if (displayDirective) {
           return displayDirective
@@ -100,7 +102,7 @@ export default defineComponent({
           return collapseProps.displayDirective
         }
       }),
-      arrowPlacement: computed<'left' | 'right'>(() => {
+      arrowPlacement: computed<CollapseArrowPlacement>(() => {
         return collapseProps.arrowPlacement
       }),
       handleClick(e: MouseEvent) {

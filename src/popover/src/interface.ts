@@ -24,3 +24,7 @@ export type InternalRenderBody = (
   onMouseenter: (e: MouseEvent) => void,
   onMouseleave: (e: MouseEvent) => void
 ) => VNode
+
+export type PopoverDisplayDirective = 'if' | 'show'
+
+export type PopoverWidth = number | 'trigger'

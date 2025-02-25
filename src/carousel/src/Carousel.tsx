@@ -12,8 +12,14 @@ import type { CarouselTheme } from '../styles'
 import type {
   ArrowScopedSlotProps,
   CarouselArrowSlotProps,
+  CarouselDirection,
+  CarouselDotPlacement,
   CarouselDotSlotProps,
+  CarouselDotType,
+  CarouselEffect,
   CarouselInst,
+  CarouselSlidesPerView,
+  CarouselTrigger,
   DotScopedSlotProps,
   Size
 } from './interface'
@@ -81,15 +87,15 @@ export const carouselProps = {
   currentIndex: Number,
   showArrow: Boolean,
   dotType: {
-    type: String as PropType<'dot' | 'line'>,
+    type: String as PropType<CarouselDotType>,
     default: 'dot'
   },
   dotPlacement: {
-    type: String as PropType<'top' | 'bottom' | 'left' | 'right'>,
+    type: String as PropType<CarouselDotPlacement>,
     default: 'bottom'
   },
   slidesPerView: {
-    type: [Number, String] as PropType<number | 'auto'>,
+    type: [Number, String] as PropType<CarouselSlidesPerView>,
     default: 1
   },
   spaceBetween: {
@@ -98,7 +104,7 @@ export const carouselProps = {
   },
   centeredSlides: Boolean,
   direction: {
-    type: String as PropType<'horizontal' | 'vertical'>,
+    type: String as PropType<CarouselDirection>,
     default: 'horizontal'
   },
   autoplay: Boolean,
@@ -111,7 +117,7 @@ export const carouselProps = {
     default: true
   },
   effect: {
-    type: String as PropType<'slide' | 'fade' | 'card' | 'custom'>,
+    type: String as PropType<CarouselEffect>,
     default: 'slide'
   },
   showDots: {
@@ -119,7 +125,7 @@ export const carouselProps = {
     default: true
   },
   trigger: {
-    type: String as PropType<'click' | 'hover'>,
+    type: String as PropType<CarouselTrigger>,
     default: 'click'
   },
   transitionStyle: {

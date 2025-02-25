@@ -1,6 +1,8 @@
 import type { ExtractPublicPropTypes, MaybeArray } from '../../_utils'
 import type { ColorPickerTheme } from '../styles'
 import type {
+  ColorPickerInternalAction,
+  ColorPickerSize,
   OnClear,
   OnConfirmImpl,
   OnUpdateValue,
@@ -107,8 +109,8 @@ export const colorPickerProps = {
     type: Array as PropType<ActionType[]>,
     default: null
   },
-  internalActions: Array as PropType<ReadonlyArray<'redo' | 'undo'>>,
-  size: String as PropType<'small' | 'medium' | 'large'>,
+  internalActions: Array as PropType<ReadonlyArray<ColorPickerInternalAction>>,
+  size: String as PropType<ColorPickerSize>,
   renderLabel: Function as PropType<RenderLabel>,
   onComplete: Function as PropType<OnUpdateValue>,
   onConfirm: Function as PropType<OnUpdateValue>,

@@ -1,3 +1,4 @@
+import type { CheckboxSize, OnUpdateValue } from './interface'
 import { useMergedState } from 'vooks'
 import {
   computed,
@@ -26,7 +27,7 @@ export interface CheckboxGroupInjection {
   minRef: Ref<number | undefined>
   disabledRef: Ref<boolean>
   valueSetRef: Ref<Set<string | number>>
-  mergedSizeRef: Ref<'small' | 'medium' | 'large'>
+  mergedSizeRef: Ref<CheckboxSize>
   toggleCheckbox: (checked: boolean, checkboxValue: string | number) => void
 }
 
@@ -36,7 +37,7 @@ export const checkboxGroupInjectionKey
 export const checkboxGroupProps = {
   min: Number,
   max: Number,
-  size: String as PropType<'small' | 'medium' | 'large'>,
+  size: String as PropType<CheckboxSize>,
   value: Array as PropType<Array<string | number> | null>,
   defaultValue: {
     type: Array as PropType<Array<string | number> | null>,
@@ -46,28 +47,8 @@ export const checkboxGroupProps = {
     type: Boolean as PropType<boolean | undefined>,
     default: undefined
   },
-  'onUpdate:value': [Function, Array] as PropType<
-    MaybeArray<
-      (
-        value: Array<string | number>,
-        meta: {
-          actionType: 'check' | 'uncheck'
-          value: string | number
-        }
-      ) => void
-    >
-  >,
-  onUpdateValue: [Function, Array] as PropType<
-    MaybeArray<
-      (
-        value: Array<string | number>,
-        meta: {
-          actionType: 'check' | 'uncheck'
-          value: string | number
-        }
-      ) => void
-    >
-  >,
+  'onUpdate:value': [Function, Array] as PropType<MaybeArray<OnUpdateValue>>,
+  onUpdateValue: [Function, Array] as PropType<MaybeArray<OnUpdateValue>>,
   // deprecated
   onChange: [Function, Array] as PropType<
     MaybeArray<(value: Array<string | number>) => void> | undefined

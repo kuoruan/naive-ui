@@ -8,6 +8,7 @@ import type { ThemeProps } from '../../_mixins'
 import type { ExtractPublicPropTypes, MaybeArray } from '../../_utils'
 import type { FormValidationStatus } from '../../form/src/interface'
 import type { PopoverProps } from '../../popover'
+import type { PopoverDisplayDirective } from '../../popover/src/interface'
 import type {
   OnUpdateValue,
   OnUpdateValueImpl,
@@ -200,7 +201,7 @@ export const selectProps = {
     MaybeArray<(value: boolean) => void>
   >,
   displayDirective: {
-    type: String as PropType<'if' | 'show'>,
+    type: String as PropType<PopoverDisplayDirective>,
     default: 'show'
   },
   resetMenuOnOptionsChange: {
